@@ -3,15 +3,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class WordsChecker {
-    String text;
-    Set<String> hashText = new HashSet<>();
+    private Set<String> text = new HashSet<>();
     public WordsChecker(String text) {
-        this.text = text;
+        Collections.addAll(this.text, text.split("\\P{IsAlphabetic}+"));
     }
 
     protected boolean hasWord(String word) {
-        Collections.addAll(this.hashText, text.split("\\P{IsAlphabetic}+"));
         return text.contains(word);
     }
-
 }
