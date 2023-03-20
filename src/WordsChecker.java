@@ -3,8 +3,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class WordsChecker {
-    private Set<String> text = new HashSet<>();
-    public WordsChecker(String text) {
+    protected Set<String> text = new HashSet<>();
+    protected WordsChecker(String text) {
         Collections.addAll(this.text, text.split("\\P{IsAlphabetic}+"));
     }
 
